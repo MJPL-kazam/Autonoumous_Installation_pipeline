@@ -1,0 +1,7 @@
+path: .
+train: images/train
+val: images/val
+names:
+  0: kazam_box
+  1: multimeter
+  2: lcd_screen
