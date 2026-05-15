@@ -1,0 +1,10 @@
+torch
+torchvision
+transformers
+opencv-python
+Pillow
+numpy
+tqdm
+PyYAML
+jupyter
+easyocr
