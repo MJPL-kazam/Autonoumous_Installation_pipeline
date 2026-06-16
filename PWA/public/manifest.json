@@ -1,0 +1,18 @@
+{
+  "name": "Kazam ROI Quality Check",
+  "short_name": "Kazam ROI",
+  "description": "YOLO-based Kazam box, multimeter, and LCD ROI detection running locally in browser",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b0e14",
+  "theme_color": "#00e68a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
