@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Kazam Site Check</title>
+  <meta name="description" content="Technician photo submission app for Kazam EV charger installations" />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#0b0e14" id="theme-color-meta" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="header">
+      <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch theme">
+        <span class="theme-toggle-icon" id="themeIcon">☀️</span>
+        <span class="theme-toggle-text" id="themeText">Light</span>
+      </button>
+      <button id="devModeToggleBtn" class="header-badge" type="button" aria-label="Toggle Developer Mode" style="cursor: pointer; border: none; font-family: inherit;">PWA</button>
+      <h1>Kazam Site Check</h1>
+      <p class="subtitle">Installation Photo Verification Form</p>
+    </header>
+
+    <!-- Loading Screen (Overlay) -->
+    <div id="loadingOverlay" class="loading-overlay">
+      <div class="loading-card glass-card">
+        <div class="loading-spinner"></div>
+        <h2 class="loading-title">Setting up AI detection</h2>
+        <p class="loading-subtitle">Downloading model for first-time use...</p>
+        
+        <div class="progress-bar-container">
+          <div class="progress-bar" id="modelDownloadProgress" style="width: 0%"></div>
+        </div>
+        <p class="loading-size" id="modelDownloadText">Connecting...</p>
+
+        <ul class="loading-steps">
+          <li class="step done"><span class="step-dot"></span> App loaded</li>
+          <li class="step done" id="swStep"><span class="step-dot"></span> Service worker ready</li>
+          <li class="step active" id="modelStep"><span class="step-dot"></span> Downloading ONNX model...</li>
+          <li class="step" id="readyStep"><span class="step-dot"></span> Ready for photo capture</li>
+        </ul>
+        <p class="loading-hint">The model will be cached for offline use after download.</p>
+      </div>
+    </div>
+
+    <!-- Main Form Content -->
+    <main class="main" id="mainForm" style="display: none;">
+      <!-- Top Progress -->
+      <div class="form-progress">
+        <div class="form-progress-segments" id="progressSegments">
+          <!-- JS injected segments -->
+        </div>
+        <p class="form-progress-text"><strong id="progressText">0 of 6</strong> photos verified</p>
+      </div>
+
+      <!-- Photo Cards Container -->
+      <div class="cards-container" id="cardsContainer">
+        <!-- JS injected cards based on PHOTO_SECTIONS -->
+      </div>
+
+      <!-- Dev Mode Stats Card -->
+      <div id="devStatsCard" class="glass-card" style="display: none; border-color: var(--warning); margin-bottom: 24px; padding: 20px;">
+        <div style="border-bottom: 1px solid var(--border); padding-bottom: 12px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="color: var(--warning); font-size: 16px;">🛠 System & Execution Logs</h3>
+          <button id="clearLogsBtn" class="btn btn-ghost" style="padding: 4px 8px; font-size: 11px;">Clear Logs</button>
+        </div>
+        <div id="devStatsContent" style="font-size: 11px; color: var(--text-muted); max-height: 300px; overflow-y: auto; font-family: monospace; white-space: pre-wrap; line-height: 1.5;">
+          <!-- Logs injected here -->
+        </div>
+      </div>
+
+      <!-- Bottom Submit Button -->
+      <div class="submit-container">
+        <button id="submitBtn" class="btn btn-primary btn-large btn-full" disabled>
+          <span class="btn-icon">✅</span>
+          <span class="btn-label">Submit Site Report</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- Developer Menu (Hidden by default, shown via long press on version footer) -->
+    <div id="devMenu" class="dev-menu glass-card" style="display: none;">
+      <h3>Developer Panel</h3>
+      <div id="deviceStats" style="font-size: 12px; color: var(--text-muted); margin-bottom: 16px; background: rgba(0,0,0,0.3); padding: 10px; border-radius: 8px;">
+        <!-- Stats injected here -->
+      </div>
+      <button id="toggleDevModeBtn" class="btn btn-ghost btn-full" style="color: var(--warning);">Enable Dev Mode UI</button>
+      <button id="testBtn" class="btn btn-ghost btn-full">Load Test Image (Full Setup)</button>
+      <button id="clearCacheBtn" class="btn btn-ghost btn-full danger-text">Clear App Cache</button>
+      <button id="closeDevMenuBtn" class="btn btn-ghost btn-full">Close Menu</button>
+    </div>
+
+    <!-- Footer Status -->
+    <footer class="footer">
+      <div id="status" class="status-bar">
+        <span class="status-dot working" id="statusDot"></span>
+        <span id="statusText">Initializing...</span>
+      </div>
+      <div class="version-footer" id="versionFooter">v0.2.0 (Long press for Dev tools)</div>
+    </footer>
+    
+    <!-- Hidden Canvas for Processing -->
+    <canvas id="hiddenCanvas" style="display: none;"></canvas>
+  </div>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
