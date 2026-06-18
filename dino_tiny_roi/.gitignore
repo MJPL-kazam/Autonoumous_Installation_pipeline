@@ -1,0 +1,13 @@
+output/
+logs/
+Data/
+__pycache__/
+*.pyc
+
+.venv/
+venv/
+env/
+
+*.pt
+*.onnx
+*.engine

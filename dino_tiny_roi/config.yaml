@@ -1,0 +1,22 @@
+base_dir: .
+input_dirs:
+  - Data/N to E
+  - Data/P to E
+  - Data/P to N
+output_dir: output
+
+model_id: IDEA-Research/grounding-dino-tiny
+device:
+
+meter_prompt: Kazam EV charger wall box . handheld digital multimeter .
+lcd_prompt: small rectangular LCD display screen on multimeter, grey green digital display, only seven segment digits, numeric reading screen, not rotary dial, not labels, not buttons, not ports.
+
+stage1_box_threshold: 0.20
+stage1_text_threshold: 0.20
+stage1_min_area_ratio: 0.01
+stage1_max_area_ratio: 0.40
+
+stage2_box_threshold: 0.15
+stage2_text_threshold: 0.15
+stage2_min_area_ratio: 0.04
+stage2_max_area_ratio: 0.50
