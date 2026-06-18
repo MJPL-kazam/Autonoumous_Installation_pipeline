@@ -1,0 +1,1 @@
+imgsz=640, half=false, dynamic=false, simplify=true, batch=1, nms=true, end2end=false, int8=false

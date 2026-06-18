@@ -1,0 +1,52 @@
+[
+  {
+    "label": "50",
+    "Width": 2,
+    "Height": 2
+  },
+  {
+    "label": "150",
+    "Width": 33,
+    "Height": 32
+  },
+  {
+    "label": "250",
+    "Width": 94,
+    "Height": 91
+  },
+  {
+    "label": "350",
+    "Width": 117,
+    "Height": 114
+  },
+  {
+    "label": "450",
+    "Width": 94,
+    "Height": 90
+  },
+  {
+    "label": "550",
+    "Width": 82,
+    "Height": 93
+  },
+  {
+    "label": "650",
+    "Width": 48,
+    "Height": 57
+  },
+  {
+    "label": "750",
+    "Width": 56,
+    "Height": 28
+  },
+  {
+    "label": "850",
+    "Width": 6,
+    "Height": 18
+  },
+  {
+    "label": "950",
+    "Width": 4,
+    "Height": 11
+  }
+]

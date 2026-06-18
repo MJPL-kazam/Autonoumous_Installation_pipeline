@@ -1,0 +1,37 @@
+[
+  {
+    "label": "350",
+    "Width": 56,
+    "Height": 1
+  },
+  {
+    "label": "450",
+    "Width": 360,
+    "Height": 63
+  },
+  {
+    "label": "550",
+    "Width": 326,
+    "Height": 6
+  },
+  {
+    "label": "650",
+    "Width": 47,
+    "Height": 7
+  },
+  {
+    "label": "750",
+    "Width": 1998,
+    "Height": 100
+  },
+  {
+    "label": "850",
+    "Width": 11,
+    "Height": 4
+  },
+  {
+    "label": "950",
+    "Width": 196,
+    "Height": 2813
+  }
+]
