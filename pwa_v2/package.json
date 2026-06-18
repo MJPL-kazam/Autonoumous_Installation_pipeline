@@ -1,0 +1,16 @@
+{
+  "name": "kazam-site-check-pwa-v2",
+  "private": true,
+  "version": "0.2.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "onnxruntime-web": "^1.26.0",
+    "vite": "^8.0.16",
+    "vite-plugin-static-copy": "^4.1.1"
+  }
+}
